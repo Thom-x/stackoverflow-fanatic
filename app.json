@@ -1,5 +1,15 @@
 {
   "name": "Stackoverflow Fanatic",
+  "env": {
+    "EMAIL": {
+      "description": "Stackoverflow account email",
+      "value": "email@example.com"
+    },
+    "PASSWORD": {
+      "description": "Stackoverflow account password",
+      "value": "azerty"
+    }
+  },
   "description": "NodeJS, automated log in for Stack Overflow.",
   "repository": "https://github.com/Thom-x/stackoverflow-fanatic",
   "keywords": ["node", "express", "phantomjs", "casperjs", "stackoverflow", "fanatic", "badge"]
