@@ -24,3 +24,5 @@ NodeJS, automated log in for Stack Overflow. [The *Fanatic* badge][0] is just be
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/Thom-x/stackoverflow-fanatic)
 
 That's it !
+
+[0]: https://stackoverflow.com/help/badges/83/fanatic
