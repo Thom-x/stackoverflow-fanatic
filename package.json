@@ -1,7 +1,9 @@
 {
   "name": "stack",
   "version": "1.0.0",
-  "description": "",
+  "description": "NodeJS, automated log in for Stack Overflow.",
+  "repository": "https://github.com/Thom-x/stackoverflow-fanatic",
+  "keywords": ["node", "express", "phantomjs", "casperjs", "stackoverflow", "fanatic", "badge"],
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
