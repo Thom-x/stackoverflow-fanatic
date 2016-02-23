@@ -41,7 +41,7 @@ casper.start()
                 this.fill('#login-form', {email: email, password: password}, true);
             });
 
-            //casper.wait(500);
+            casper.wait(500);
 
             casper.then(function () {
                 if (this.getCurrentUrl().indexOf(link) === 0) {
