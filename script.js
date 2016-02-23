@@ -5,7 +5,12 @@
 phantom.casperPath = 'node_modules/casperjs';
 phantom.injectJs('node_modules/casperjs/bin/bootstrap.js');
 
-var LOGIN_URL = 'https://stackoverflow.com/users/login';
+var LOGIN_URLS = [
+    'https://stackoverflow.com/users/login',
+    'https://programmers.stackexchange.com/',
+    'https://superuser.com/',
+    'https://codereview.stackexchange.com/'
+];
 var start = +new Date();
 
 var casper = require('casper').create({
@@ -26,26 +31,36 @@ if (!email || !password || !(/@/).test(email)) {
 } else {
     casper.echo('Loading login page');
 }
+casper.start()
+    .each(LOGIN_URLS, function (casper, link) {
+        if(LOGIN_URLS.indexOf(link)===0){
 
-casper.start(LOGIN_URL, function () {
-    this.echo('Logging in using email address ' + email +
-        ' and password ' + (new Array(password.length + 1)).join('*'));
-    this.fill('#se-login-form', {email: email, password: password}, true);
-});
+            casper.thenOpen(link, function () {
+                this.echo('Logging in using email address ' + email +
+                    ' and password ' + (new Array(password.length + 1)).join('*'));
+                this.fill('#login-form', {email: email, password: password}, true);
+            });
 
-casper.wait(500);
+            //casper.wait(500);
 
-casper.then(function () {
-    if (this.getCurrentUrl().indexOf(LOGIN_URL) === 0) {
-        this.die('Could not log in. Check your credentials.');
-    } else {
-        this.echo('Clicking profile link');
-        this.click('.profile-me');
-        this.then(function () {
-            this.echo('User ' + this.getCurrentUrl().split('/').reverse()[0] + ' logged in!' +
-                '\nTook ' + (((+new Date()) - start) / 1000) + 's');
-        });
-    }
-});
+            casper.then(function () {
+                if (this.getCurrentUrl().indexOf(link) === 0) {
+                    this.die('Could not log in. Check your credentials.');
+                } else {
+                    this.echo('Clicking profile link');
+                    this.click('.profile-me');
+                    this.then(function () {
+                        this.echo('User ' + this.getCurrentUrl().split('/').reverse()[0] + ' logged in!' +
+                            '\nTook ' + (((+new Date()) - start) / 1000) + 's');
+                    });
+                }
+            });
+        }else{
+            casper.thenOpen(link, function () {
+                this.echo(link+' visited');
+            });
+        }
+    });
+
 
 casper.run();
