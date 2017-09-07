@@ -48,7 +48,7 @@ casper.start()
                     this.die('Could not log in. Check your credentials.');
                 } else {
                     this.echo('Clicking profile link');
-                    this.click('.profile-me');
+                    this.click('.my-profile');
                     this.then(function () {
                         this.echo('User ' + this.getCurrentUrl().split('/').reverse()[0] + ' logged in!' +
                             '\nTook ' + (((+new Date()) - start) / 1000) + 's');
