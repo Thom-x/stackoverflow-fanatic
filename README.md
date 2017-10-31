@@ -23,7 +23,7 @@ NodeJS, automated log in for Stack Overflow. [The *Fanatic* badge][0] is just be
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/Thom-x/stackoverflow-fanatic)
 
-If using Heroku, you can also use the Heroku Scheduler, and the cronjob prepared for that (`./bin/request.js`): 
+If using Heroku, you can also use the [Heroku Scheduler](https://scheduler.heroku.com/dashboard), and the cronjob prepared for that (`./bin/request.js`): 
 
 ![](https://monosnap.com/file/TMjP78NkluNICIJOxnZZNUv3rYUkJo.png)
 
