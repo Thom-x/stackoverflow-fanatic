@@ -22,8 +22,8 @@ app.get('/', function(req, res) {
 
     // use event hooks to provide a callback to execute when data are available: 
     child.stdout.on('data', function(data) {
-        result += data.toString();
-        console.log(data.toString());
+        result += data.toString().replace(/([^.@\s]+)(\.[^.@\s]+)*@([^.@\s]+\.)+([^.@\s]+)/,"");
+        console.log(data.toString().replace(/([^.@\s]+)(\.[^.@\s]+)*@([^.@\s]+\.)+([^.@\s]+)/,""));
     });
 })
 
