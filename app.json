@@ -16,5 +16,8 @@
   },
   "description": "NodeJS, automated log in for Stack Overflow.",
   "repository": "https://github.com/Thom-x/stackoverflow-fanatic",
+  "addons": [
+   "scheduler"
+  ],
   "keywords": ["node", "express", "phantomjs", "casperjs", "stackoverflow", "fanatic", "badge"]
 }
