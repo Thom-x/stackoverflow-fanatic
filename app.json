@@ -8,6 +8,10 @@
     "PASSWORD": {
       "description": "Stackoverflow account password",
       "value": "azerty"
+    },
+    "APP_URL": {
+   "description": "App url for Heroku Scheduler plugin, leave it blank if you don't plan tu use it.",
+   "value": " https://your-heroku-app.herokuapp.com/"
     }
   },
   "description": "NodeJS, automated log in for Stack Overflow.",
